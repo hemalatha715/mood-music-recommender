@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    width: 85%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-size: 35px;
+}
+
+.subtitle {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.moods {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.moods form {
+    display: inline-block;
+}
+
+button {
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    background: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+.result {
+    margin-top: 40px;
+}
+
+.result h2 {
+    color: white;
+}
+
+.card {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    color: #5a4fcf;
+}
+
+.card p {
+    font-size: 17px;
+}
+
+.error {
+    background: #ffdddd;
+    color: red;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
