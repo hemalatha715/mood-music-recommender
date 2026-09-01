@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mood Based Music & Activity Recommender</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎵 Mood Based Music & Activity Recommender</h1>
+
+        <p class="subtitle">
+            Select your current mood and get a personalized recommendation.
+        </p>
+
+        <div class="moods">
+
+            <form action="/recommend" method="POST">
+                <input type="hidden" name="mood" value="Happy">
+                <button type="submit">😊 Happy</button>
+            </form>
+
+            <form action="/recommend" method="POST">
+                <input type="hidden" name="mood" value="Sad">
+                <button type="submit">😢 Sad</button>
+            </form>
+
+            <form action="/recommend" method="POST">
+                <input type="hidden" name="mood" value="Angry">
+                <button type="submit">😠 Angry</button>
+            </form>
+
+            <form action="/recommend" method="POST">
+                <input type="hidden" name="mood" value="Relaxed">
+                <button type="submit">😌 Relaxed</button>
+            </form>
+
+            <form action="/recommend" method="POST">
+                <input type="hidden" name="mood" value="Energetic">
+                <button type="submit">⚡ Energetic</button>
+            </form>
+
+        </div>
+
+
+        {% if selected_mood %}
+
+        <div class="result">
+
+            <h2>Recommendation for {{ selected_mood }} mood</h2>
+
+            <div class="card">
+
+                <h3>🎵 Music Recommendation</h3>
+
+                <p>
+                    <strong>Song:</strong> {{ song }}
+                </p>
+
+                <p>
+                    <strong>Artist:</strong> {{ artist }}
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🏃 Activity Recommendation</h3>
+
+                <p>{{ activity }}</p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>💬 Motivational Message</h3>
+
+                <p>{{ message }}</p>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+
+        {% if error %}
+
+        <div class="error">
+            {{ error }}
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
